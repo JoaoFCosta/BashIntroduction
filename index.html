@@ -1,0 +1,373 @@
+<title>Bash Introduction</title>
+
+<meta name="description" content="A lightwieght introduction to bash commands.">
+<meta name="author" content="João Costa">
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+<link rel="stylesheet" href="css/reveal.css">
+<link rel="stylesheet" href="css/theme/white.css" id="theme">
+
+<!-- Code syntax highlighting -->
+<link rel="stylesheet" href="lib/css/zenburn.css">
+
+<link rel="stylesheet" href="css/custom.css">
+
+<!-- Printing and PDF exports -->
+<script>
+  var link = document.createElement( 'link' );
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+  document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+
+<!--[if lt IE 9]>
+<script src="lib/js/html5shiv.js"></script>
+<![endif]-->
+</head>
+<body>
+  <div class="reveal">
+
+    <div class="slides">
+      <section style="text-align: left;">
+        <img id="logo" src="img/cesium.png" height="232" width="244" alt="CeSIUM">
+        <h1 id="title">Bash Introduction</h1>
+        <p>A lightweight introduction to bash commands.</p>
+      </section>
+
+      <section style="text-align: left">
+        <section>
+          <h2>What is a <br> command shell?</h2>
+          <ul>
+            <li>A program that interprets commands</li>
+            <li>Allows a user to execute commands by typing them manually at a terminal,
+              or automatically in programs called <em>shell scripts</em></li>
+            <li>A shell is <em>not</em> an operating system. It is a way to interface with the
+              operating system and run commands</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>What is bash?</h2>
+          <ul>
+            <li>BASH = Bourne Again Shell</li>
+            <li>Written as a free replacement to the standard Bourne Shell (/bin/sh)
+              originally written by Steve Bourne for UNIX systems</li>
+            <li>Since it is Free Software, it has been adopted as the default shell on most
+              Linux systems</li>
+          </ul>
+        </section>
+      </section>
+
+      <!-- DIRECTORIES -->
+      <section style="text-align: left">
+        <section style="text-align: center">
+          <h1 style="background-color: red; color: white">Directories</h1>
+        </section>
+
+        <!-- PWD -->
+        <section>
+          <h3 style="font-family: monospace; text-transform: none">$ pwd</h3>
+          <p>Prints the working directory.</p>
+        </section>
+
+        <!-- LS -->
+        <section>
+          <h3 style="font-family: monospace; text-transform: none">$ ls</h3>
+          <p>List files and folders in the current directory.</p>
+
+          <table>
+            <tr>
+              <td>Flag</td>
+              <td>Description</td>
+            </tr>
+
+            <tr>
+              <td class="flag" style="font-family: monospace">-a</td>
+              <td>List all files and all folders.</td>
+            </tr>
+
+            <tr>
+              <td class="flag" style="font-family: monospace">-l</td>
+              <td>Long format.</td>
+            </tr>
+          </table>
+        </section>
+
+        <!-- CD -->
+        <section>
+          <h3 style="font-family: monospace; text-transform: none">$ cd PATH</h3>
+          <p>Change the working directory.</p>
+
+          <table>
+            <tr>
+              <td class="flag" style="font-family: monospace">..</td>
+              <td>Parent directory.</td>
+            </tr>
+
+            <tr>
+              <td class="flag" style="font-family: monospace">~</td>
+              <td>Home directory.</td>
+            </tr>
+          </table>
+        </section>
+
+        <!-- MKDIR -->
+        <section >
+          <h3 style="font-family: monospace; text-transform: none">$ mkdir [OPT] DIR</h3>
+          <p>Create a new directory.</p>
+
+          <table>
+            <tr>
+              <td>Flag</td>
+              <td>Description</td>
+            </tr>
+
+            <tr>
+              <td class="flag" style="font-family: monospace">-p</td>
+              <td>Make parents.</td>
+            </tr>
+          </table>
+        </section>
+
+        <!-- RMDIR -->
+        <section>
+          <h3 style="font-family: monospace; text-transform: none">$ rmdir [OPT] DIR</h3>
+          <p>Remove a directory.</p>
+
+          <table>
+            <tr>
+              <td>Flag</td>
+              <td>Description</td>
+            </tr>
+
+            <tr>
+              <td class="flag" style="font-family: monospace">-p</td>
+              <td>Remove parents.</td>
+            </tr>
+          </table>
+        </section>
+
+        <!-- MV -->
+        <section>
+          <h3 style="font-family: monospace; text-transform: none">$ mv FROM TO</h3>
+          <p>Move a folder.</p>
+        </section>
+      </section>
+
+      <!-- FILES -->
+      <section style="text-align: left">
+        <section style="text-align: center">
+          <h1 style="background-color: red; color: white">FILES</h1>
+        </section>
+      </section>
+
+      <!-- PIPING & REDIRECTION -->
+      <section style="text-align: left">
+        <section style="text-align: center">
+          <h1 style="background-color: red; color: white">Piping & Redirection</h1>
+        </section>
+
+        <section>
+          <h3 style="font-family: monospace">|</h3>
+          <p>"Pipe", redirect the output of one command into another command.</p>
+          <br>
+          <p>Example: <br><span style="font-family: monospace">$ ls | more</span></p>
+        </section>
+
+        <section>
+          <h3 style="font-family: monospace">></h3>
+          <p>Redirect the output of a command into a new file. If the file already
+            exists, overwrite it.</p>
+          <br>
+          <p>Example: <br><span style="font-family: monospace">$ ls > myfiles.txt</span></p>
+        </section>
+
+        <section>
+          <h3 style="font-family: monospace">>></h3>
+          <p>Append the output of a command into a file. A new file is created if the file
+            doesn't exist.</p>
+          <br>
+          <p>Example: <br><span style="font-family: monospace">
+              $ echo "Mary 555-1234" >> phonenumbers.txt</span></p>
+        </section>
+
+        <section>
+          <h3 style="font-family: monospace"><</h3>
+          <p>Redirect a file as input to a program.</p>
+          <br>
+          <p>Example: <br><span style="font-family: monospace">
+              $ more < phonenumbers.txt</span></p>
+        </section>
+      </section>
+
+      <!-- PERMISSIONS -->
+      <section style="text-align: left">
+        <section style="text-align: center">
+          <h1 style="background-color: red; color: white">PERMISSIONS</h1>
+        </section>
+      </section>
+
+      <!-- SPECIAL CHARACTERS -->
+      <section style="text-align: left">
+        <section style="text-align: center">
+          <h1 style="background-color: red; color: white">Special Characters</h1>
+        </section>
+
+        <!-- \ -->
+        <section>
+          <h3 style="font-family: monospace">\</h3>
+          <p>Escape character. If you want to reference a special character, you must
+            "escape" it first.</p>
+          <br>
+          <p>Example: <br><span style="font-family: monospace">$ touch /tmp/filename\*</span></p>
+        </section>
+
+        <!-- / -->
+        <section>
+          <h3 style="font-family: monospace">/</h3>
+          <p>Directory separator, used to separate a string of directory names.</p>
+          <br>
+          <p>Example: <br><span style="font-family: monospace">$ cd /usr/src/linux</span></p>
+        </section>
+
+        <!-- . -->
+        <section>
+          <h3 style="font-family: monospace">.</h3>
+          <p>Current directory. Can also "hide" files when it is the first character
+            in a filename.</p>
+          <br>
+          <p>Example: <br><span style="font-family: monospace">$ cat ./file.txt</span></p>
+        </section>
+
+        <!-- .. -->
+        <section>
+          <h3 style="font-family: monospace">..</h3>
+          <p>Parent directory of the current working directory.</p>
+          <br>
+          <p>Example: <br><span style="font-family: monospace">$ ls ..</span></p>
+        </section>
+
+        <!-- ~ -->
+        <section>
+          <h3 style="font-family: monospace">~</h3>
+          <p>User's home directory.</p>
+          <br>
+          <p>Example: <br><span style="font-family: monospace">$ ls ~/Documents</span></p>
+        </section>
+
+        <!-- * -->
+        <section>
+          <h3 style="font-family: monospace">*</h3>
+          <p>Represents 0 or more characters in a filename, or by itself, all files
+            in a directory.</p>
+          <br>
+          <p>Example: <br><span style="font-family: monospace">pic*2015.jpg can represent
+              'picJan2015.jpg', 'picFeb2015.jpg', etc.</span></p>
+        </section>
+
+        <!-- ? -->
+        <section>
+          <h3 style="font-family: monospace">?</h3>
+          <p>Represents a single character in a filename.</p>
+          <br>
+          <p>Example: <br>
+            <span style="font-family: monospace">hello?.txt can represent 'hello1.txt',
+              'helloz.txt' but not 'helloabc.txt'.</span></p>
+        </section>
+
+        <!-- [] -->
+        <section>
+          <h3 style="font-family: monospace">[  ]</h3>
+          <p>Can be used to represent a range of values, e.g. [0-9], [A-Z], etc.</p>
+          <br>
+          <p>Example: <br><span style="font-family: monospace">hello[0-2].txt represents the
+              files 'hello0.txt', 'hello1.txt' and 'hello2.txt'.</span></p>
+        </section>
+
+        <!-- ; -->
+        <section>
+          <h3 style="font-family: monospace">;</h3>
+          <p>Command separator. Allows you to execute multiple commands on a single line.</p>
+          <br>
+          <p>Example: <br><span style="font-family: monospace">$ cd /var/log ;
+              less messages</span></p>
+        </section>
+
+        <!-- && -->
+        <section>
+          <h3 style="font-family: monospace">&&</h3>
+          <p>Command separator as ';', but only runs the second command if the first
+            one finished without errors.</p>
+          <br>
+          <p>Example: <br><span style="font-family: monospace">$ cd /var/logs && </span></p>
+        </section>
+
+        <!-- & -->
+        <section>
+          <h3 style="font-family: monospace">&</h3>
+          <p>Execute a command in the background, and immediately get your shell back.</p>
+          <br>
+          <p>Example: <br><span style="font-family: monospace">$ which ruby >
+              /tmp/locations.txt &</span></p>
+        </section>
+      </section>
+
+      <!-- PROCESSES -->
+      <section style="text-align: left">
+        <section style="text-align: center">
+          <h1 style="background-color: red; color: white">PROCESSES</h1>
+        </section>
+      </section>
+
+      <!-- CTRL SIGNALS -->
+      <section style="text-align: left">
+        <section style="text-align: center">
+          <h1 style="background-color: red; color: white">CTRL <br>SIGNALS</h1>
+        </section>
+      </section>
+
+      <!-- HELP (MAN PAGES) -->
+      <section style="text-align: left">
+        <section style="text-align: center">
+          <h1 style="background-color: red; color: white">MAN <br>PAGES</h1>
+        </section>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.js"></script>
+
+  <script>
+
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    controls: true,
+  progress: true,
+  history: true,
+  center: true,
+
+  transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+  // Optional reveal.js plugins
+  dependencies: [
+  { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+  { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+  { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+  { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+  { src: 'plugin/zoom-js/zoom.js', async: true },
+  { src: 'plugin/notes/notes.js', async: true }
+  ]
+  });
+
+  </script>
+
+</body>
+    </html>
