@@ -283,7 +283,7 @@
         <!-- GREP -->
         <section>
           <h3 style="font-family: monospace; text-transform: none">$ grep [OPT]
-          PATTERN FILE</h3>
+            PATTERN FILE</h3>
           <p>Search for a pattern in a file.</p>
 
           <table>
@@ -351,7 +351,6 @@
             </tr>
           </table>
         </section>
-
       </section>
 
       <!-- PIPING & REDIRECTION -->
@@ -398,6 +397,94 @@
         <section style="text-align: center">
           <h1 style="background-color: red; color: white">PERMISSIONS</h1>
         </section>
+
+        <section>
+          <h3>Permissions Table</h3>
+          <br>
+          <table style="border: 1px solid black; font-family: monospace">
+            <tr>
+              <th colspan="3" style="border: 1px solid black;">u</th>
+              <th colspan="3" style="border: 1px solid black;">g</th>
+              <th colspan="3" style="border: 1px solid black;">o</th>
+            </tr>
+            <tr>
+              <th colspan="3" style="border: 1px solid black;">user</th>
+              <th colspan="3" style="border: 1px solid black;">group</th>
+              <th colspan="3" style="border: 1px solid black;">others</th>
+            </tr>
+            <tr>
+              <th style="border: 1px solid black;">r</th>
+              <th style="border: 1px solid black;">w</th>
+              <th style="border: 1px solid black;">x</th>
+              <th style="border: 1px solid black;">r</th>
+              <th style="border: 1px solid black;">w</th>
+              <th style="border: 1px solid black;">x</th>
+              <th style="border: 1px solid black;">r</th>
+              <th style="border: 1px solid black;">w</th>
+              <th style="border: 1px solid black;">x</th>
+            </tr>
+          </table>
+          <hr>
+
+          <p>u - read and write permissions; <br>
+            g - read permissions; <br>
+            o - read permissions</p>
+          <table style="border: 1px solid black; font-family: monospace">
+            <tr>
+              <th style="border: 1px solid black;">1</th>
+              <th style="border: 1px solid black;">1</th>
+              <th style="border: 1px solid black;">0</th>
+              <th style="border: 1px solid black;">1</th>
+              <th style="border: 1px solid black;">0</th>
+              <th style="border: 1px solid black;">0</th>
+              <th style="border: 1px solid black;">1</th>
+              <th style="border: 1px solid black;">0</th>
+              <th style="border: 1px solid black;">0</th>
+            </tr>
+            <tr>
+              <th colspan="3" style="border: 1px solid black;">6</th>
+              <th colspan="3" style="border: 1px solid black;">4</th>
+              <th colspan="3" style="border: 1px solid black;">4</th>
+            </tr>
+          </table>
+
+        </section>
+
+        <!-- SUDO -->
+        <section>
+          <h3 style="font-family: monospace; text-transform: none">$ sudo [OPT]
+            [USER] COMMAND</h3>
+          <p>Run commands with the security privileges of another user.
+            Normally the root.</p>
+        </section>
+
+        <!-- CHMOD -->
+        <section>
+          <h3 style="font-family: monospace; text-transform: none">$ chmod [OPT]
+            MODE FILE</h3>
+          <p>Change file modes or Access Control Lists.</p>
+
+          <table>
+            <tr>
+              <td>Flag</td>
+              <td>Description</td>
+            </tr>
+
+            <tr>
+              <td class="flag" style="font-family: monospace">-r</td>
+              <td>Recursively.</td>
+            </tr>
+          </table>
+
+          <br>
+          <p>Example: Add read and write permissions to user<br>
+            <span style="font-family: monospace">$ sudo chmod
+              u+rw index.html</span><br>
+            or <br>
+            <span style="font-family: monospace">$ sudo chmod
+              644 index.html</span></p>
+        </section>
+
       </section>
 
       <!-- SPECIAL CHARACTERS -->
