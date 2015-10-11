@@ -157,6 +157,24 @@
           <h3 style="font-family: monospace; text-transform: none">$ mv FROM TO</h3>
           <p>Move a folder.</p>
         </section>
+
+        <!-- CP -->
+        <section>
+          <h3 style="font-family: monospace; text-transform: none">$ CP [OPT]
+            FROM TO</h3>
+          <p>Copy directory to another place.</p>
+          <table>
+            <tr>
+              <td>Flag</td>
+              <td>Description</td>
+            </tr>
+
+            <tr>
+              <td class="flag" style="font-family: monospace">-r</td>
+              <td>Copy directories recursively.</td>
+            </tr>
+          </table>
+        </section>
       </section>
 
       <!-- FILES -->
@@ -164,6 +182,176 @@
         <section style="text-align: center">
           <h1 style="background-color: red; color: white">FILES</h1>
         </section>
+
+        <!-- TOUCH -->
+        <section>
+          <h3 style="font-family: monospace; text-transform: none">$ touch FILE</h3>
+          <p>Create an empty file.</p>
+        </section>
+
+        <!-- CP -->
+        <section>
+          <h3 style="font-family: monospace; text-transform: none">$ cp FROM TO</h3>
+          <p>Copy a file.</p>
+        </section>
+
+        <!-- MV -->
+        <section>
+          <h3 style="font-family: monospace; text-transform: none">$ mv FROM TO</h3>
+          <p>Move a file.</p>
+        </section>
+
+        <!-- RM -->
+        <section>
+          <h3 style="font-family: monospace; text-transform: none">$ rm FILE</h3>
+          <p>Remove a file.</p>
+        </section>
+
+        <!-- CAT -->
+        <section>
+          <h3 style="font-family: monospace; text-transform: none">$ cat FILE</h3>
+          <p>Concatenate and print a file.</p>
+
+          <table>
+            <tr>
+              <td>Flag</td>
+              <td>Description</td>
+            </tr>
+
+            <tr>
+              <td class="flag" style="font-family: monospace">-n</td>
+              <td>Number the output lines, starting at 1.</td>
+            </tr>
+          </table>
+        </section>
+
+        <!-- LESS -->
+        <section>
+          <h3 style="font-family: monospace; text-transform: none">$ less [OPT]
+            FILE</h3>
+          <p>View, navigate and search a file.</p>
+
+          <table>
+            <tr>
+              <td>Flag</td>
+              <td>Description</td>
+            </tr>
+
+            <tr>
+              <td class="flag" style="font-family: monospace">--help</td>
+              <td>Summary of less commands.</td>
+            </tr>
+          </table>
+        </section>
+
+        <!-- HEAD -->
+        <section>
+          <h3 style="font-family: monospace; text-transform: none">$ head [OPT] FILE</h3>
+          <p>Display first lines of a file.</p>
+
+          <table>
+            <tr>
+              <td>Flag</td>
+              <td>Description</td>
+            </tr>
+
+            <tr>
+              <td class="flag" style="font-family: monospace">-n N</td>
+              <td>Display first N lines.</td>
+            </tr>
+          </table>
+        </section>
+
+        <!-- TAIL -->
+        <section>
+          <h3 style="font-family: monospace; text-transform: none">$ tail [OPT] FILE</h3>
+          <p>Display the last part of a file.</p>
+
+          <table>
+            <tr>
+              <td>Flag</td>
+              <td>Description</td>
+            </tr>
+
+            <tr>
+              <td class="flag" style="font-family: monospace">-n N</td>
+              <td>Display last N lines.</td>
+            </tr>
+          </table>
+        </section>
+
+        <!-- GREP -->
+        <section>
+          <h3 style="font-family: monospace; text-transform: none">$ grep [OPT]
+          PATTERN FILE</h3>
+          <p>Search for a pattern in a file.</p>
+
+          <table>
+            <tr>
+              <td>Flag</td>
+              <td>Description</td>
+            </tr>
+
+            <tr>
+              <td class="flag" style="font-family: monospace">-c</td>
+              <td>Display the number of matched lines.</td>
+            </tr>
+
+            <tr>
+              <td class="flag" style="font-family: monospace">-i</td>
+              <td>Ignore case sensitive.</td>
+            </tr>
+
+            <tr>
+              <td class="flag" style="font-family: monospace">-l</td>
+              <td>Display the file names.</td>
+            </tr>
+
+            <tr>
+              <td class="flag" style="font-family: monospace">-n</td>
+              <td>Display the line numbers.</td>
+            </tr>
+
+            <tr>
+              <td class="flag" style="font-family: monospace">-w</td>
+              <td>Match whole word.</td>
+            </tr>
+          </table>
+        </section>
+
+        <!-- WC -->
+        <section>
+          <h3 style="font-family: monospace; text-transform: none">$ wc [OPT] FILE</h3>
+          <p>Count the number of words, lines, characters and bytes of a file.</p>
+
+          <table>
+            <tr>
+              <td>Flag</td>
+              <td>Description</td>
+            </tr>
+
+            <tr>
+              <td class="flag" style="font-family: monospace">-l</td>
+              <td>Line count.</td>
+            </tr>
+
+            <tr>
+              <td class="flag" style="font-family: monospace">-c</td>
+              <td>Byte count.</td>
+            </tr>
+
+            <tr>
+              <td class="flag" style="font-family: monospace">-m</td>
+              <td>Character count.</td>
+            </tr>
+
+            <tr>
+              <td class="flag" style="font-family: monospace">-w</td>
+              <td>Word count.</td>
+            </tr>
+          </table>
+        </section>
+
       </section>
 
       <!-- PIPING & REDIRECTION -->
